@@ -1,0 +1,25 @@
+<hibernate-configuration>
+    <session-factory>
+        <!--  JDBC Database connection settings  -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/it_courses?useSSL=false</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
+        <!--  JDBC connection pool settings ... using built-in test pool  -->
+        <property name="connection.pool_size">10</property>
+        <!--  Select our SQL dialect  -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!--  Echo the SQL to stdout  -->
+        <property name="show_sql">true</property>
+        <!--  Set the current session context  -->
+        <property name="current_session_context_class">thread</property>
+        <!--  Drop and re-create the database schema on startup  -->
+        <property name="hbm2ddl.auto">validate</property>
+        <mapping class="Course"/>
+        <mapping class="Purchase"/>
+        <mapping class="PurchaseLinked"/>
+        <mapping class="Student"/>
+        <mapping class="Subscription"/>
+        <mapping class="Teacher"/>
+    </session-factory>
+</hibernate-configuration>
